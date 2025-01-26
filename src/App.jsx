@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-
+import { Texto } from "./components/Texto";
+import { Portada } from "./components/Portada";
+import { Card } from "./components/Card";
 export const App = () => {
   const [products, setProducts] = useState([]);
 
@@ -14,6 +16,13 @@ export const App = () => {
   useEffect(() => {
     datos();
   }, []);
-
-  return <div>App</div>;
+  console.log(products);
+  return (
+    <div className="bg-black">
+          <Texto />
+          <div className="mt-4">
+            <Card products={products} />
+          </div>
+        </div>
+  );
 };
